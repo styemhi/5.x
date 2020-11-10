@@ -64,7 +64,7 @@ function csrf_check()
 {
     global $token;
 
-    if(!isset($token) || strcasecmp($token, $_SESSION['token']) != 0){
+    if(!isset($token) || strcasecmp($token, $_SESSION['token']) !== 0){
         echo '<a href="http://bbs.dedecms.com/907721.html">DedeCMS:CSRF Token Check Failed!</a>';
         exit;
     }
@@ -72,10 +72,9 @@ function csrf_check()
 
 function XSSClean($val)
 {
-
     if (is_array($val))
     {
-        while (list($key) = each($val))
+        foreach ($val as $key => $v)
         {
             if(in_array($key,array('tags','body','dede_fields','dede_addonfields','dopost','introduce'))) continue;
             $val[$key] = XSSClean($val[$key]);

@@ -138,8 +138,9 @@ if($dopost=='bak')
     else
     {
         $j = 0;
-        $fs = $bakStr = '';
-
+        $fs = array();
+        $bakStr = '';
+        
         //分析表里的字段信息
         $dsql->GetTableFields($nowtable);
         $intable = "INSERT INTO `$nowtable` VALUES(";

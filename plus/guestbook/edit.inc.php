@@ -51,7 +51,7 @@ else if($job=='editok')
             exit();
         }
     }
-	$msg = HtmlReplace($msg, -1);
+    $msg = addslashes(HtmlReplace($msg, -1));
     $dsql->ExecuteNoneQuery("UPDATE `#@__guestbook` SET `msg`='$msg', `posttime`='".time()."' WHERE id='$id' ");
     ShowMsg("成功更改或回复一条留言！", $GUEST_BOOK_POS);
     exit();

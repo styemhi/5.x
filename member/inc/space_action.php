@@ -264,7 +264,7 @@ else if($action=='guestbooksave')
         exit();
     }
     $uname = HtmlReplace($uname, 1);
-    $msg = cn_substrR(HtmlReplace($msg), 2048);
+    $msg = addslashes(cn_substrR(HtmlReplace($msg), 2048));
     $title = cn_substrR(HtmlReplace($title), 255);
     if($cfg_ml->M_UserName != '' && $cfg_ml->M_ID != $uidnum)
     {

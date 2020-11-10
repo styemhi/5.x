@@ -23,7 +23,7 @@ else
 }
 
 $tag = FilterSearch(urldecode($tag));
-if($tag != addslashes($tag)) $tag = '';
+if($tag !== addslashes($tag)) $tag = '';
 if($tag == '') $dlist = new TagList($tag, 'tag.htm');
 else $dlist = new TagList($tag, 'taglist.htm');
 $dlist->Display();
