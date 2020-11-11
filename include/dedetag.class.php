@@ -482,7 +482,7 @@ class DedeTagParse
         {
             if($CTag->TagName==$str && !$CTag->IsReplace)
             {
-                return $CTag;
+                return $CTag->GetInnerText();
                 break;
             }
         }
