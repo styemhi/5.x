@@ -3,7 +3,6 @@ if(!defined('DEDEINC')) exit("Request Error!");
 
 function dede_autoloader($classname)
 {
-    global $cfg_soft_lang;
     $classname = preg_replace("/[^0-9a-z_]/i", '', $classname);
     if( class_exists ( $classname ) )
     {
