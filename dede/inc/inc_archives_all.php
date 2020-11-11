@@ -223,7 +223,7 @@ function GetFieldValue($dvalue,$dtype,$aid=0,$job='add',$addvar='')
         {
             //远程图片
             $reimgs = "";
-            if($isUrlOpen)
+            if($GLOBALS["isUrlOpen"])
             {
                 $reimgs = GetRemoteImage($iurl,$GLOBALS['adminid']);
                 if(is_array($reimgs))
@@ -242,7 +242,7 @@ function GetFieldValue($dvalue,$dtype,$aid=0,$job='add',$addvar='')
             $imgfile = $GLOBALS['cfg_basedir'].$iurl;
             if(is_file($imgfile))
             {
-                $imginfos = GetImageSize($imgfile,&$info);
+                $imginfos = getimagesize($imgfile);
                 $imgurl = "{dede:img text='' width='".$imginfos[0]."' height='".$imginfos[1]."'} $iurl {/dede:img}";
             }
         }
@@ -389,7 +389,8 @@ function GetFormItemValue($ctag, $fvalue)
             $fvalue =  "";
         }
         $ntag = $ndtp->GetTag("img");
-        $fvalue = trim($ntag->GetInnerText());
+        $fvalue = trim($ntag);
+   
         $innertext = "<input type='text' name='$fieldname' value='$fvalue' id='$fieldname' style='width:300'><input name='".$fieldname."_bt' type='button' value='浏览...' onClick=\"SelectImage('form1.$fieldname','big')\">\r\n";
         $formitem = str_replace("~name~",$ctag->GetAtt('itemname'),$formitem);
         $formitem = str_replace("~form~",$innertext,$formitem);
