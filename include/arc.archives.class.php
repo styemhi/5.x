@@ -482,7 +482,7 @@ class Archives
      *
      * @access    public
      * @param     string  $fname  键名称
-     * @param     string  $ctag  标记
+     * @param     object  $ctag  标记
      * @return    string
      */
     function GetField($fname, $ctag)
