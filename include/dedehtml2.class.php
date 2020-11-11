@@ -101,19 +101,11 @@ class DedeHtml2
     {
         $cAtt = new DedeAttribute2();
         $cAtt->IsTagName = false;
-        $c = '';
         $i = 0;
         $startPos = 0;
         $endPos = 0;
-        $wt = 0;
-        $ht = 0;
-        $scriptdd = 0;
         $attStr = '';
-        $tmpValue = '';
-        $tmpValue2 = '';
         $tagName = '';
-        $hashead = 0;
-        $slen = strlen($this->SourceHtml);
         if($this->GetLinkType=='link' || $this->GetLinkType=='')
         {
             $needTags = array('a');

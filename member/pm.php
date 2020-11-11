@@ -19,12 +19,12 @@ if($cfg_mb_lit=='Y')
     exit();
 }
 
-#api{{
-if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
-{
-    if($data = uc_get_user($cfg_ml->M_LoginID)) uc_pm_location($data[0]);
-}
-#/aip}}
+// #api{{
+// if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
+// {
+//     if($data = uc_get_user($cfg_ml->M_LoginID)) uc_pm_location($data[0]);
+// }
+// #/aip}}
 
 if(!isset($dopost))
 {

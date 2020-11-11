@@ -22,7 +22,7 @@ helper('cache');
  */
 function CheckUserID($uid, $msgtitle='用户名', $ckhas=TRUE)
 {
-    global $cfg_mb_notallow,$cfg_mb_idmin,$cfg_md_idurl,$cfg_soft_lang,$dsql;
+    global $cfg_mb_notallow,$cfg_md_idurl,$cfg_soft_lang,$dsql;
     if($cfg_mb_notallow != '')
     {
         $nas = explode(',', $cfg_mb_notallow);

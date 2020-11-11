@@ -22,7 +22,7 @@ class image
     var $watermarkstatus;
     
     // 析构函数,兼容PHP4
-    function image($targetfile, $cfg_thumb, $cfg_watermarktext, $photo_waterpos, $photo_diaphaneity, $photo_wheight, $photo_wwidth, $cfg_watermarktype, $photo_marktrans,$trueMarkimg, $attach = array())
+    function image($targetfile, $cfg_thumb, $cfg_watermarktext=null, $photo_waterpos=null, $photo_diaphaneity=null, $photo_wheight=null, $photo_wwidth=null, $cfg_watermarktype=null, $photo_marktrans=null,$trueMarkimg=null, $attach = array())
     {
         $this->__construct($targetfile, $cfg_thumb, $cfg_watermarktext, $photo_waterpos, $photo_diaphaneity, $photo_wheight, $photo_wwidth, $cfg_watermarktype, $photo_marktrans,$trueMarkimg, $attach);
     }

@@ -97,49 +97,49 @@ if($step == 1)
             exit();
         }
         
-        #api{{
-        if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
-        {
-            $uid = uc_user_register($userid, $pwd, $email);
-            if($uid <= 0)
-            {
-                if($uid == -1)
-                {
-                    ShowMsg("用户名不合法！","-1");
-                    exit();
-                }
-                elseif($uid == -2)
-                {
-                    ShowMsg("包含要允许注册的词语！","-1");
-                    exit();
-                }
-                elseif($uid == -3)
-                {
-                    ShowMsg("你指定的用户名 {$userid} 已存在，请使用别的用户名！","-1");
-                    exit();
-                }
-                elseif($uid == -5)
-                {
-                    ShowMsg("你使用的Email 不允许注册！","-1");
-                    exit();
-                }
-                elseif($uid == -6)
-                {
-                    ShowMsg("你使用的Email已经被另一帐号注册，请使其它帐号","-1");
-                    exit();
-                }
-                else
-                {
-                    ShowMsg("注删失改！","-1");
-                    exit();
-                }
-            }
-            else
-            {
-                $ucsynlogin = uc_user_synlogin($uid);
-            }
-        }
-        #/aip}}
+        // #api{{
+        // if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
+        // {
+        //     $uid = uc_user_register($userid, $pwd, $email);
+        //     if($uid <= 0)
+        //     {
+        //         if($uid == -1)
+        //         {
+        //             ShowMsg("用户名不合法！","-1");
+        //             exit();
+        //         }
+        //         elseif($uid == -2)
+        //         {
+        //             ShowMsg("包含要允许注册的词语！","-1");
+        //             exit();
+        //         }
+        //         elseif($uid == -3)
+        //         {
+        //             ShowMsg("你指定的用户名 {$userid} 已存在，请使用别的用户名！","-1");
+        //             exit();
+        //         }
+        //         elseif($uid == -5)
+        //         {
+        //             ShowMsg("你使用的Email 不允许注册！","-1");
+        //             exit();
+        //         }
+        //         elseif($uid == -6)
+        //         {
+        //             ShowMsg("你使用的Email已经被另一帐号注册，请使其它帐号","-1");
+        //             exit();
+        //         }
+        //         else
+        //         {
+        //             ShowMsg("注删失改！","-1");
+        //             exit();
+        //         }
+        //     }
+        //     else
+        //     {
+        //         $ucsynlogin = uc_user_synlogin($uid);
+        //     }
+        // }
+        // #/aip}}
         
         if($cfg_md_mailtest=='Y')
         {

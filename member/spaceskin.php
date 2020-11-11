@@ -43,7 +43,7 @@ else
  */
 function checkuse($type)
 {
-    global $cfg_ml, $userrow;
+    global $userrow;
     if($userrow['spacestyle'] == $type)
     {
         return '<a href="#"><font color=red>使用中...</font></a>';
@@ -107,7 +107,7 @@ function ListSkin()
         {
             $dirs[] = $sysname;
         }
-        closedir($dh);
+        closedir($fp);
     }
     //获得模板摘要信息
     foreach($dirs as $sysname)

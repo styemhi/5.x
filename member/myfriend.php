@@ -40,12 +40,12 @@ if($dopost=='upsta')
     }
     $dsql->ExecuteNoneQuery("UPDATE `#@__member_friends` SET $upsta WHERE id IN($ids) AND mid='{$cfg_ml->M_ID}' ");
     
-    #api{{
-    if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php' && $sta!='bad')
-    {
-        if($data = uc_get_user($cfg_ml->M_LoginID)) uc_friend_add($uid, $data[0]);
-    }
-    #/aip}}
+    // #api{{
+    // if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php' && $sta!='bad')
+    // {
+    //     if($data = uc_get_user($cfg_ml->M_LoginID)) uc_friend_add($uid, $data[0]);
+    // }
+    // #/aip}}
     
     if($sta=='good')
     {
@@ -66,17 +66,17 @@ if($dopost=='upsta')
 else if($dopost=='del')
 {
     $ids = preg_replace("#[^0-9,]#", "", $ids);
-    #api{{
-    if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
-    {
-        if($data = uc_get_user($cfg_ml->M_LoginID))
-          {
-            list($uid, $username, $email) = $data;          
-            $friendids = @explode(",", $ids);
-            if(!empty($friendids)) uc_friend_delete($uid , $friendids);
-        }
-    }
-    #/aip}}
+    // #api{{
+    // if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
+    // {
+    //     if($data = uc_get_user($cfg_ml->M_LoginID))
+    //       {
+    //         list($uid, $username, $email) = $data;          
+    //         $friendids = @explode(",", $ids);
+    //         if(!empty($friendids)) uc_friend_delete($uid , $friendids);
+    //     }
+    // }
+    // #/aip}}
     $dsql->ExecuteNoneQuery("DELETE FROM `#@__member_friends` WHERE id IN($ids) AND mid='{$cfg_ml->M_ID}' ");
     ShowMsg("成功删除所选的好友！","myfriend.php?ftype=".$ftype);
     exit();

@@ -23,7 +23,7 @@ class DedeTag
     var $InnerText="";    //标记之间的文本
     var $StartPos=0;      //标记起始位置
     var $EndPos=0;        //标记结束位置
-    var $CAttribute="";   //标记属性描述,即是class DedeAttribute
+    var $CAttribute = null;   //标记属性描述,即是class DedeAttribute
     var $TagValue="";     //标记的值
     var $TagID = 0;
 
@@ -1116,7 +1116,7 @@ class DedeAttributeParse
 {
     var $sourceString = "";
     var $sourceMaxSize = 1024;
-    var $cAttributes = "";
+    var $cAttributes = null;
     var $charToLow = TRUE;
     function SetSource($str='')
     {

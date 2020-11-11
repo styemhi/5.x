@@ -45,13 +45,13 @@ if($dopost=='save')
     }
     $addupquery = '';
     
-    #api{{
-    if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
-    {
-        $emailnew = $email != $row['email'] ? $email : '';
-        $ucresult = uc_user_edit($cfg_ml->M_LoginID, $oldpwd, $userpwd, $emailnew);        
-    }
-    #/aip}}
+    // #api{{
+    // if(defined('UC_API') && @include_once DEDEROOT.'/uc_client/client.php')
+    // {
+    //     $emailnew = $email != $row['email'] ? $email : '';
+    //     $ucresult = uc_user_edit($cfg_ml->M_LoginID, $oldpwd, $userpwd, $emailnew);        
+    // }
+    // #/aip}}
     
     //修改安全问题或Email
     if($email != $row['email'] || ($newsafequestion != 0 && $newsafeanswer != ''))

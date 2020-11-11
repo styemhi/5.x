@@ -120,7 +120,7 @@ if($cfg_ml->IsLogin())
  */
 function CheckRank($rank=0, $money=0, $needinfo=TRUE)
 {
-    global $cfg_ml,$cfg_memberurl,$cfg_mb_reginfo,$cfg_mb_spacesta;
+    global $cfg_ml,$cfg_memberurl,$cfg_mb_reginfo,$cfg_mb_spacesta,$dsql;
     if(!$cfg_ml->IsLogin())
     {
         header("Location:{$cfg_memberurl}/login.php?gourl=".urlencode(GetCurUrl()));
